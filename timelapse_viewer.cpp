@@ -187,7 +187,8 @@ public:
                 // Calculate the time per frame in milliseconds
                 int msPerFrame = 1000 / targetFPS;
                 
-                if (elapsed >= msPerFrame) {
+                // if (elapsed >= msPerFrame) {
+                if (true) {
                     lastFrameTime = currentTime;
                     currentIndex = (currentIndex + 1) % imagePaths.size();
                     renderCurrentFrame();
@@ -197,7 +198,9 @@ public:
                 // Calculate FPS every second
                 auto fpsDuration = std::chrono::duration_cast<std::chrono::seconds>(
                     currentTime - fpsTimer).count();
-                if (fpsDuration >= 1) {
+                fpsDuration = 1;
+                // if (fpsDuration >= 1) {
+                if (true) {
                     std::string title = "High-Speed Timelapse Viewer - " + 
                                        std::to_string(frameCount / fpsDuration) + " FPS";
                     SDL_SetWindowTitle(window, title.c_str());
